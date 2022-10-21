@@ -1,0 +1,52 @@
+meeltype
+
+{
+    content: "Start your day with exclusive breakfast options"
+    image: "assets/breakfast.png"
+    meal_type: 1
+    name: "Breakfast"
+    _id: "6322e120275af6fa166838b4"
+}
+
+location
+
+{
+    city: "Delhi"
+    city_id: 1
+    country_name: "India"
+    location_id: 1
+    name: "Shalimar Bagh"
+    _id: "6321d6ee4cebd9370a7bfe02"
+}
+
+
+///filter
+{
+    city: "Delhi"
+    cuisine: {name:"North Indian"}
+    locality: "Shalimar Bagh"
+    min_price: 333
+    name: "KFC"
+    _id: "632081d4f5bd9c962645e142"
+}
+
+
+///restaurant data
+
+{
+    aggregate_rating: 0,
+    city: "",
+    city_id: -1,
+    contact_number: 0,
+    cuisine: [],
+    cuisine_id: [],
+    image: "",
+    locality: "",
+    location_id:-1,
+    mealtype_id:-1,
+    min_price:0,  
+    name: " ",
+    rating_text: "",
+    thumb: [],
+    _id: -1,
+}
