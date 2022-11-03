@@ -9,7 +9,7 @@ function QuickSarch() {
 
     let getMealtypes=async () => {
         try{
-      let response= await axios.get("http://localhost:5003/api/get-meal-types");
+      let response= await axios.get("https://zc-batch-48-api-app.herokuapp.com/api/get-meal-types");
       let data= response.data;  
       if (data.status===true){
         setMealTypeList([...data.result]);  //recreate array
