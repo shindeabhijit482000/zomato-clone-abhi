@@ -64,6 +64,7 @@ function SearchPageResult() {
                 _filter["lcost"]= Number(costForTwo[0]);
                 _filter["hcost"]= Number(costForTwo[1]);
                 break;
+            
         }
         console.log(_filter);
         setFilter({..._filter});
