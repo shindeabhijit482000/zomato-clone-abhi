@@ -4,6 +4,8 @@ import Header from "../Header";
 import axios from "axios";
 import jwt_Decode from "jwt-decode";
 import Swal from 'sweetalert2';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 
 function RestaurantPage() {
@@ -181,6 +183,31 @@ useEffect(()=>{
 
     return (
         <>
+            <div
+                className="modal fade"
+                id="slideShow"
+                tabIndex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog modal-lg" style={{hight:"75vh"}}>
+                    <div className="modal-content">
+                        <div className="modal-body h75">
+                            <Carousel showThumbs={false} infiniteLoop={true}>
+                                {restaurant.thumb.map((value, index)=>{
+                                    return(
+                                        <div key={index} className="w-100">
+                                            <img src={"/images/"+value}/>
+                                        </div>
+                                    );
+                                })}
+                            </Carousel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div className="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabIndex="-1">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
@@ -281,7 +308,11 @@ useEffect(()=>{
             <section className="row justify-content-center">
                 <section className="col-11 restaurant-main-image position-relative">
                     <img src={"/images/"+restaurant.image} alt=""/>
-                    <button className="btn btn-gallery position-absolute">Click to See Image Gallery</button>
+                    <button className="btn btn-gallery position-absolute"
+                            data-bs-toggle="modal"
+                            data-bs-target="#slideShow" >
+                        Click to See Image Gallery
+                    </button>
                 </section>
                 <section className="col-11">
                     <h2 className="mt-3">{restaurant.name} </h2>
